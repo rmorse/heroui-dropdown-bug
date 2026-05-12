@@ -1,4 +1,5 @@
-@import '../node_modules/@heroui/styles/dist/heroui.min.css';
+@import "tailwindcss";
+@import "@heroui/styles";
 
 :root {
   color: #18181b;

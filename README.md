@@ -1,6 +1,12 @@
 # HeroUI Dropdown placement transition repro
 
-Minimal Vite/React reproduction for a HeroUI Dropdown placement issue.
+Minimal Vite/React reproduction for a HeroUI Dropdown placement issue. The
+project intentionally uses the documented Tailwind v4 setup:
+
+```css
+@import "tailwindcss";
+@import "@heroui/styles";
+```
 
 ## Steps
 
