@@ -17,15 +17,21 @@ const FRUITS = [
   "Kiwi",
 ];
 
-function ReproDropdown() {
+function ReproDropdown({
+  label,
+  popoverClassName,
+}: {
+  label: string;
+  popoverClassName?: string;
+}) {
   const [selected, setSelected] = useState<Selection>(new Set(["apple"]));
 
   return (
     <Dropdown>
-      <Button aria-label="Open fruit menu" variant="secondary">
-        Fruit
+      <Button aria-label={`Open ${label} menu`} variant="secondary">
+        {label}
       </Button>
-      <Dropdown.Popover className="min-w-[256px]">
+      <Dropdown.Popover className={`min-w-[256px] ${popoverClassName ?? ""}`}>
         <Dropdown.Menu
           selectedKeys={selected}
           selectionMode="single"
@@ -61,7 +67,11 @@ export default function App() {
     <main className="probe-page">
       <div className="probe-spacer" aria-hidden="true" />
       <div className="probe-target">
-        <ReproDropdown />
+        <ReproDropdown label="With Bug" />
+        <ReproDropdown
+          label="With Fix"
+          popoverClassName="repro-dropdown-popover--fixed"
+        />
       </div>
     </main>
   );
